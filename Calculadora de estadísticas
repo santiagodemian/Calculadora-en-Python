@@ -1,0 +1,17 @@
+# Calculadora de estadísticas en Python
+
+def media(nums):
+    return sum(nums) / len(nums)
+
+def desviacion_estandar(nums):
+    n = len(nums)
+    media = sum(nums) / n
+    suma = sum((x - media) ** 2 for x in nums)
+    desviacion = (suma / n) ** 0.5
+    return desviacion
+
+print("Ingrese una serie de números separados por espacios:")
+nums = list(map(float, input().split()))
+
+print("La media es:", media(nums))
+print("La desviación estándar es:", desviacion_estandar(nums))
